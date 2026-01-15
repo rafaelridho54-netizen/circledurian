@@ -1,220 +1,804 @@
-          <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Circle Durian Cengkareng | Durian Segar Jakarta Barat</title>
-
-<meta name="description" content="Circle Durian adalah toko durian segar di Cengkareng Jakarta Barat. Menyediakan durian lokal premium, durian medan, montong. Order via WhatsApp.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --green:#1b5e20;
-  --green-light:#43a047;
-  --dark:#1a1a1a;
-}
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#f5f7f6;
-  color:#333;
-  scroll-behavior:smooth;
-}
-
-/* ===== HERO ===== */
-.hero{
-  background:linear-gradient(135deg,var(--green),var(--green-light));
-  color:#fff;
-  padding:80px 20px;
-  text-align:center;
-  animation:fadeDown 1.2s ease;
-}
-.hero h1{
-  font-size:42px;
-  margin-bottom:10px;
-}
-.hero p{
-  font-size:18px;
-  opacity:.95;
-}
-
-/* ===== SECTION ===== */
-section{
-  padding:60px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-h2{
-  color:var(--green);
-  margin-bottom:20px;
-  font-size:28px;
-}
-
-/* ===== CARD ===== */
-.card{
-  background:#fff;
-  border-radius:16px;
-  padding:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-  animation:fadeUp 1s ease;
-}
-
-/* ===== MENU GRID ===== */
-.menu-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-.menu-box{
-  background:#f9fdf9;
-  border-radius:14px;
-  padding:20px;
-  transition:.3s;
-}
-.menu-box:hover{
-  transform:translateY(-6px);
-  box-shadow:0 10px 20px rgba(0,0,0,.1);
-}
-.menu-box h3{
-  margin-top:0;
-  color:var(--green);
-}
-
-/* ===== CTA ===== */
-.cta{
-  background:linear-gradient(135deg,var(--green-light),var(--green));
-  color:#fff;
-  text-align:center;
-  padding:70px 20px;
-}
-.cta a{
-  display:inline-block;
-  margin:12px;
-  padding:14px 26px;
-  background:#fff;
-  color:var(--green);
-  text-decoration:none;
-  font-weight:600;
-  border-radius:50px;
-  transition:.3s;
-}
-.cta a:hover{
-  transform:scale(1.05);
-  background:#e8f5e9;
-}
-
-/* ===== FOOTER ===== */
-footer{
-  background:var(--dark);
-  color:#ccc;
-  text-align:center;
-  padding:20px;
-  font-size:14px;
-}
-
-/* ===== ANIMATION ===== */
-@keyframes fadeDown{
-  from{opacity:0;transform:translateY(-40px)}
-  to{opacity:1;transform:translateY(0)}
-}
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:600px){
-  .hero h1{font-size:32px}
-  h2{font-size:24px}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Durian | Durian Premium Cengkareng Jakarta</title>
+    <meta name="description" content="Circle Durian menyediakan durian premium berkualitas di Cengkareng, Jakarta Barat. Blackthorn, Musang King, Bangor, Montong.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2E7D32; /* Hijau utama */
+            --secondary: #FFD54F; /* Kuning aksen */
+            --accent: #1B5E20; /* Hijau gelap */
+            --light: #F1F8E9; /* Hijau muda */
+            --dark: #1A1A1A; /* Hitam untuk teks */
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.9) 0%, rgba(76, 175, 80, 0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,192C672,181,768,139,864,138.7C960,139,1056,181,1152,186.7C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat center bottom;
+            background-size: cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: var(--secondary);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(255, 213, 79, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 213, 79, 0.4);
+        }
+        
+        /* ===== DURIAN VARIETIES SECTION ===== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .varieties {
+            padding: 6rem 0;
+            background-color: var(--gray);
+        }
+        
+        .durian-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .durian-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            position: relative;
+        }
+        
+        .durian-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .durian-image {
+            height: 220px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--primary);
+        }
+        
+        .durian-content {
+            padding: 1.5rem;
+        }
+        
+        .durian-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .durian-tag {
+            display: inline-block;
+            background-color: var(--light);
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+        
+        .durian-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 8rem;
+            box-shadow: 0 15px 40px rgba(46, 125, 50, 0.2);
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-features {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .feature-icon {
+            background-color: var(--light);
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23FFD54F' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button-primary, .cta-button-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+        
+        .cta-button-primary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .cta-button-primary:hover {
+            background-color: #FFC107;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button-primary, .cta-button-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .varieties, .about, .cta-section {
+                padding: 4rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .durian-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🍈</div>
+                <div class="logo-text">Circle<span>Durian</span></div>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#home">Beranda</a>
+                <a href="#varieties">Jenis Durian</a>
+                <a href="#about">Tentang Kami</a>
+                <a href="#contact">Hubungi</a>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>🍈 Circle Durian</h1>
-  <p>Durian Segar • Manis • Legit • Tidak Zonk</p>
-</div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Durian Premium Cengkareng Jakarta</h1>
+            <p>Rasakan kelezatan durian segar berkualitas premium dengan cita rasa autentik yang tidak akan Anda temukan di tempat lain.</p>
+            <a href="#contact" class="cta-button">
+                Pesan Sekarang <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
 
-<!-- ABOUT -->
-<section>
-  <div class="card">
-    <h2>Tentang Circle Durian</h2>
-    <p>
-      <strong>Circle Durian</strong> adalah toko durian segar di
-      <strong>Cengkareng, Jakarta Barat</strong>.
-      Kami menyediakan durian pilihan dengan rasa manis legit,
-      cocok untuk pecinta durian, makan rame-rame, dan oleh-oleh.
-    </p>
-    <p>
-      📍 <strong>Alamat:</strong><br>
-      Ruko Taman Palem Blok A5 No.15,<br>
-      Cengkareng, Jakarta Barat
-    </p>
-  </div>
-</section>
+    <!-- Durian Varieties Section -->
+    <section class="varieties" id="varieties">
+        <div class="container">
+            <div class="section-title">
+                <h2>Jenis Durian Unggulan</h2>
+            </div>
+            
+            <div class="durian-grid">
+                <!-- Blackthorn -->
+                <div class="durian-card">
+                    <div class="durian-image">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div class="durian-content">
+                        <h3 class="durian-name">Blackthorn</h3>
+                        <span class="durian-tag">Premium</span>
+                        <p class="durian-desc">Durian dengan daging tebal, tekstur krimi, dan rasa manis pahit yang unik. Kulitnya berwarna hijau gelap dengan duri tajam.</p>
+                    </div>
+                </div>
+                
+                <!-- Musang King -->
+                <div class="durian-card">
+                    <div class="durian-image">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="durian-content">
+                        <h3 class="durian-name">Musang King</h3>
+                        <span class="durian-tag">Royal</span>
+                        <p class="durian-desc">Raja durian dengan daging kuning keemasan, tekstur lembut, dan rasa manis legit yang melekat di lidah.</p>
+                    </div>
+                </div>
+                
+                <!-- Bangor -->
+                <div class="durian-card">
+                    <div class="durian-image">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="durian-content">
+                        <h3 class="durian-name">Bangor</h3>
+                        <span class="durian-tag">Eksklusif</span>
+                        <p class="durian-desc">Durian asli Malaysia dengan daging kering, rasa manis intens, dan aroma yang kuat namun tidak menyengat.</p>
+                    </div>
+                </div>
+                
+                <!-- Montong -->
+                <div class="durian-card">
+                    <div class="durian-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="durian-content">
+                        <h3 class="durian-name">Montong</h3>
+                        <span class="durian-tag">Populer</span>
+                        <p class="durian-desc">Durian Thailand dengan daging kuning pucat, tekstur lembut, dan rasa manis yang pas untuk semua kalangan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- MENU -->
-<section>
-  <h2>🍈 Daftar Menu</h2>
-  <div class="menu-grid">
-    <div class="menu-box">
-      <h3>Durian Segar</h3>
-      <ul>
-        <li>Durian Lokal Premium</li>
-        <li>Durian Medan</li>
-        <li>Durian Montong</li>
-      </ul>
-    </div>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Circle Durian</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <i class="fas fa-store-alt"></i>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Durian Berkualitas Premium di Cengkareng</h3>
+                    <p>Circle Durian adalah destinasi utama bagi pecinta durian di Jakarta Barat. Kami menyediakan durian segar berkualitas premium yang dipilih langsung dari perkebunan terbaik di Indonesia dan Thailand.</p>
+                    <p>Setiap durian yang kami jual dipastikan matang pohon, memiliki rasa manis legit, dan daging yang tebal. Kami hanya memilih durian dengan kualitas terbaik untuk memastikan kepuasan pelanggan.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4>Segar & Matang Pohon</h4>
+                                <p>Durian dipetik saat matang optimal untuk cita rasa terbaik</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <h4>Kualitas Premium</h4>
+                                <p>Hanya durian terpilih yang memenuhi standar kualitas kami</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <div>
+                                <h4>Gratis Pengiriman</h4>
+                                <p>Area Cengkareng dan sekitarnya dengan pembelian minimum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="menu-box">
-      <h3>Olahan & Kupasan</h3>
-      <ul>
-        <li>Daging Durian Cup</li>
-        <li>Durian Kupas Premium</li>
-        <li>Durian Frozen</li>
-      </ul>
-    </div>
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Siap Menikmati Durian Premium?</h2>
+                <p>Pesan sekarang dan dapatkan pengalaman kuliner durian terbaik yang pernah Anda rasakan. Kami siap melayani pemesanan untuk acara pribadi, keluarga, atau bisnis.</p>
+                
+                <div class="cta-buttons">
+                    <a href="https://wa.me/6282311440610" target="_blank" class="cta-button-primary">
+                        <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                    </a>
+                    
+                    <a href="https://www.google.com/maps/search/Circle+Durian+Cengkareng" target="_blank" class="cta-button-secondary">
+                        <i class="fas fa-map-marker-alt"></i> Kunjungi Toko
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="menu-box">
-      <h3>Paket Favorit</h3>
-      <ul>
-        <li>Paket Hemat Circle</li>
-        <li>Paket Rame Circle</li>
-      </ul>
-    </div>
-  </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Circle Durian</h4>
+                    <p>Toko durian premium di Cengkareng, Jakarta Barat. Menyediakan durian segar berkualitas dengan cita rasa autentik.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/circledurian" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/circledurian" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/6282311440610" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Lokasi</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Ruko Taman Palem Blok A5 No.15</li>
+                        <li>Cengkareng, Jakarta Barat</li>
+                        <li>Indonesia</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kontak</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+62212345678"><i class="fas fa-phone"></i> (021) 2345-678</a></li>
+                        <li><a href="https://wa.me/6282311440610" target="_blank"><i class="fab fa-whatsapp"></i> +62 823-1144-0610</a></li>
+                        <li><a href="mailto:info@circledurian.com"><i class="fas fa-envelope"></i> info@circledurian.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Circle Durian. Hak Cipta Dilindungi. | Durian Premium Cengkareng Jakarta Barat</p>
+            </div>
+        </div>
+    </footer>
 
-  <p style="margin-top:15px"><em>*Harga & stok hubungi admin</em></p>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-  <h2>📲 Order Online Sekarang</h2>
-  <p>Klik tombol di bawah untuk pemesanan cepat</p>
-
-  <a href="https://wa.me/6282311440610" target="_blank">
-    WhatsApp Order
-  </a>
-
-  <a href="https://instagram.com/circledurian" target="_blank">
-    Instagram
-  </a>
-
-  <a href="https://www.google.com/maps/search/Circle+Durian+Cengkareng" target="_blank">
-    Google Maps
-  </a>
-</section>
-
-<footer>
-  © 2026 Circle Durian • Durian Cengkareng Jakarta Barat
-</footer>
-
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '2rem';
+                navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                navLinks.style.gap = '1.5rem';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
+                    if(window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements to animate
+        document.querySelectorAll('.durian-card, .about-image, .about-text').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
-</html>      
+</html>
